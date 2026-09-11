@@ -41,7 +41,7 @@ class Issuance(
     var issuedAt: LocalDateTime,
 
     @Column(nullable = false)
-    var expiredAt: LocalDateTime,
+    var expiresAt: LocalDateTime,
 
     var usedAt: LocalDateTime? = null,
 

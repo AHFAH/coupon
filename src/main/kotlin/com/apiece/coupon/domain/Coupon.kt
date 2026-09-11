@@ -26,7 +26,7 @@ class Coupon(
     var startsAt: LocalDateTime? = null,
 
     @Column(nullable = false, updatable = false)
-    var createdAt: LocalDateTime? = LocalDateTime.now(),
+    var createdAt: LocalDateTime = LocalDateTime.now(),
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
