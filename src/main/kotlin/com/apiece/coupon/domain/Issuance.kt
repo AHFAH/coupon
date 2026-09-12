@@ -33,7 +33,7 @@ class Issuance(
     @Column(nullable = false)
     var couponId: Long,
 
-    @Column(nullable = false, length = 16)
+    @Column(length = 16)
     @Enumerated(EnumType.STRING)
     var status: IssuanceStatus = IssuanceStatus.ISSUED,
 
@@ -48,5 +48,4 @@ class Issuance(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
-) {
-}
+)
