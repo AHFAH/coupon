@@ -48,4 +48,11 @@ class Issuance(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
-)
+) {
+    fun isExpired(now: LocalDateTime): Boolean = !now.isBefore(expiresAt)
+
+    fun markUsed(now: LocalDateTime) {
+        status = IssuanceStatus.USED
+        usedAt = now
+    }
+}
